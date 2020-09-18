@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
 app.use(session ({
-    secret: 'a world made steel',
+    secret: process.env.SESSION_SECRET,
     resave: false, 
     saveUninitialized: false, 
 }))
